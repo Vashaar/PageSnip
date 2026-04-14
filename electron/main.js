@@ -17,6 +17,7 @@ const createWindow = async () => {
     minWidth: 980,
     minHeight: 760,
     backgroundColor: '#fff7f3',
+    icon: path.join(__dirname, '..', 'build', process.platform === 'win32' ? 'icon.ico' : 'icon.png'),
     title: 'PageSnip',
     autoHideMenuBar: true,
     webPreferences: {
