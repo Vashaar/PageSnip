@@ -34,7 +34,7 @@ app.innerHTML = `
   <main class="shell">
     <section class="hero">
       <div class="hero__copy">
-        <p class="eyebrow">Slice PDF</p>
+        <p class="eyebrow">PageSnip</p>
         <h1>Split PDFs without the bloated nonsense.</h1>
         <p class="hero__lede">
           Drop in a PDF, choose the pages you want, and export a clean split file.

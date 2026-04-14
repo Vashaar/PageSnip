@@ -1,5 +1,5 @@
 {
-  "name": "slice-pdf",
+  "name": "pagesnip",
   "version": "1.0.0",
   "description": "Lightweight cross-platform PDF splitter desktop app by Vashaar Sarmad",
   "author": "Vashaar Sarmad",
@@ -31,8 +31,8 @@
     "vite": "^5.4.18"
   },
   "build": {
-    "appId": "com.vashaar.slicepdf",
-    "productName": "Slice PDF",
+    "appId": "com.vashaar.pagesnip",
+    "productName": "PageSnip",
     "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
     "directories": {
       "buildResources": "build",

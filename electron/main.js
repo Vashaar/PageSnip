@@ -15,7 +15,7 @@ const createWindow = async () => {
     minWidth: 980,
     minHeight: 760,
     backgroundColor: '#f4efe4',
-    title: 'Slice PDF',
+    title: 'PageSnip',
     autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
