@@ -7,7 +7,20 @@ export default [
   },
   js.configs.recommended,
   {
-    files: ['electron/**/*.js', 'src/**/*.js'],
+    files: ['electron/**/*.js', 'src/**/*.js', 'scripts/**/*.mjs'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        ...globals.node
+      }
+    },
+    rules: {
+      'no-alert': 'off'
+    }
+  },
+  {
+    files: ['src/**/*.js'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -15,9 +28,6 @@ export default [
         ...globals.browser,
         ...globals.node
       }
-    },
-    rules: {
-      'no-alert': 'off'
     }
   }
 ];

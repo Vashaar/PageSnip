@@ -14,7 +14,8 @@
     "build:web": "vite build",
     "build": "npm run build:web && electron-builder",
     "build:dir": "npm run build:web && electron-builder --dir",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test:smoke": "node scripts/smoke-test.mjs"
   },
   "dependencies": {
     "pdf-lib": "^1.17.1",
