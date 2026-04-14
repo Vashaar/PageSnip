@@ -1,0 +1,73 @@
+{
+  "name": "slice-pdf",
+  "version": "1.0.0",
+  "description": "Lightweight cross-platform PDF splitter desktop app by Vashaar Sarmad",
+  "author": "Vashaar Sarmad",
+  "license": "MIT",
+  "main": "electron/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "electron": "electron .",
+    "start": "concurrently -k \"npm:dev\" \"npm:electron:dev\"",
+    "electron:dev": "wait-on tcp:5173 && cross-env VITE_DEV_SERVER_URL=http://127.0.0.1:5173 electron .",
+    "build:web": "vite build",
+    "build": "npm run build:web && electron-builder",
+    "build:dir": "npm run build:web && electron-builder --dir",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^4.10.38"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^35.1.5",
+    "electron-builder": "^26.0.12",
+    "eslint": "^9.26.0",
+    "globals": "^16.0.0",
+    "vite": "^5.4.18"
+  },
+  "build": {
+    "appId": "com.vashaar.slicepdf",
+    "productName": "Slice PDF",
+    "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist-installers"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false,
+      "createDesktopShortcut": "always"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "signAndEditExecutable": false,
+      "verifyUpdateCodeSignature": false
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.productivity"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Office"
+    }
+  }
+}

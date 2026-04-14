@@ -1,0 +1,354 @@
+:root {
+  color-scheme: light;
+  --bg: #f4efe4;
+  --bg-strong: #e9dcc6;
+  --surface: rgba(255, 251, 245, 0.78);
+  --surface-strong: rgba(255, 251, 245, 0.96);
+  --surface-outline: rgba(66, 49, 32, 0.08);
+  --text: #20160f;
+  --muted: #665240;
+  --accent: #c8602e;
+  --accent-deep: #8f3b18;
+  --accent-soft: rgba(200, 96, 46, 0.14);
+  --success: #2f6d42;
+  --shadow: 0 20px 60px rgba(85, 57, 22, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  font-family: 'Aptos', 'Segoe UI Variable', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(244, 196, 147, 0.45), transparent 28%),
+    radial-gradient(circle at 85% 12%, rgba(196, 227, 210, 0.4), transparent 20%),
+    linear-gradient(180deg, #f9f3e8 0%, var(--bg) 100%);
+  color: var(--text);
+}
+
+body.is-busy {
+  cursor: progress;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.shell {
+  width: min(1180px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding: 28px 0 36px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.7fr 0.9fr;
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 20px;
+}
+
+.hero__copy,
+.hero__badge,
+.card {
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--surface-outline);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.hero__copy {
+  padding: 34px;
+}
+
+.hero__badge {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background:
+    linear-gradient(160deg, rgba(33, 21, 14, 0.92), rgba(94, 47, 20, 0.88)),
+    var(--surface);
+  color: #fff7ee;
+}
+
+.hero__badge span,
+.section-label,
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.hero__badge strong {
+  margin-top: 12px;
+  font-size: 1.6rem;
+}
+
+.hero__badge small {
+  color: rgba(255, 247, 238, 0.76);
+  margin-top: 8px;
+}
+
+.eyebrow {
+  color: var(--accent-deep);
+  margin: 0 0 16px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.3rem, 5vw, 4.5rem);
+  line-height: 0.96;
+  max-width: 10ch;
+}
+
+.hero__lede {
+  margin-top: 18px;
+  max-width: 58ch;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 24px;
+}
+
+.dropzone {
+  grid-column: span 2;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-style: dashed;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.dropzone--active,
+.dropzone:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(200, 96, 46, 0.45);
+  background: var(--surface-strong);
+  outline: none;
+}
+
+.dropzone__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 82px;
+  height: 82px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #d96d36, #8e3510);
+  color: white;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.dropzone p {
+  max-width: 58ch;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.dropzone__hint {
+  margin-top: 16px;
+  color: var(--accent-deep);
+  font-weight: 600;
+}
+
+.card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.controls h2,
+.export h2 {
+  margin-top: 8px;
+  font-size: 1.5rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(32, 22, 15, 0.06);
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.pill--accent {
+  color: var(--accent-deep);
+  background: var(--accent-soft);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field span {
+  font-weight: 700;
+}
+
+.field input {
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(49, 35, 23, 0.12);
+  background: rgba(255, 255, 255, 0.65);
+  color: var(--text);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: rgba(200, 96, 46, 0.5);
+  box-shadow: 0 0 0 4px rgba(200, 96, 46, 0.12);
+}
+
+.field-note {
+  margin-top: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.chip,
+.button {
+  border: none;
+  cursor: pointer;
+  transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease;
+}
+
+.chip:disabled,
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+.chip {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(32, 22, 15, 0.07);
+  color: var(--text);
+  font-weight: 700;
+}
+
+.button {
+  padding: 14px 18px;
+  border-radius: 18px;
+  font-weight: 800;
+}
+
+.button:hover:not(:disabled),
+.chip:hover:not(:disabled),
+.compression-card:hover {
+  transform: translateY(-1px);
+}
+
+.button--primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+  color: #fffaf5;
+}
+
+.button--ghost {
+  background: rgba(32, 22, 15, 0.07);
+  color: var(--text);
+}
+
+.button--wide {
+  width: 100%;
+}
+
+.compression-options {
+  display: grid;
+  gap: 10px;
+}
+
+.compression-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(49, 35, 23, 0.08);
+  background: rgba(255, 255, 255, 0.56);
+  cursor: pointer;
+}
+
+.compression-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.compression-card__title {
+  font-weight: 700;
+}
+
+.compression-card--selected {
+  border-color: rgba(200, 96, 46, 0.42);
+  background: rgba(200, 96, 46, 0.11);
+}
+
+@media (max-width: 920px) {
+  .shell {
+    width: min(100vw - 22px, 1180px);
+    padding-top: 12px;
+  }
+
+  .hero,
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .dropzone {
+    grid-column: span 1;
+  }
+
+  h1 {
+    max-width: 100%;
+  }
+}
