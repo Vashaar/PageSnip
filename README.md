@@ -27,6 +27,10 @@ No subscriptions. No file limits. Your files stay on your computer.
 Download the latest version here:  
 https://github.com/Vashaar/PageSnip/releases
 
+Windows installer:
+
+- `PageSnip-1.0.0-win-x64.exe`
+
 ---
 
 ## Why PageSnip?
@@ -66,3 +70,12 @@ PageSnip keeps everything local, fast, and simple.
 ```bash
 npm install
 npm start
+```
+
+Production build:
+
+```bash
+npm run build
+```
+
+The Windows installer is generated in `dist-installers/`.
